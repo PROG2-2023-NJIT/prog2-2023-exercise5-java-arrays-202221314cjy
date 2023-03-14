@@ -11,8 +11,7 @@ public class Main
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter the size:");
-        int size = input.nextInt();
+        int size = 3;
         for(int i=0;i<size;i++){
 
         System.out.println("Please enter your full name:");
