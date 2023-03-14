@@ -1,61 +1,93 @@
 package prog2.exercise5.flight.booking.system;
+
+import java.util.Scanner;
 import java.time.LocalDate;
-public class Main {
+
+public class Main
+{
     public static void main( String[] args )
     {
-        int size = 3;
-        size=3;
-        FlightBooking fb = new FlightBooking(size);
 
-        String [] fullName = {"Matt Jive", "Sally Fields", "Posh Quattro"};
-        String [] gender = {"Male", "Female", "Other"};
-        int [] age = {43, 32, 21};
 
-        for(int i=0; i<size; ++i){
-            fb.setPassengerFullName(i, fullName[i]);
-            fb.setPassengerGender(i, gender[i]);
-            fb.setPassengerAge(i, age[i]);
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Please enter the size:");
+        int size = input.nextInt();
+        for(int i=0;i<size;i++){
+
+        System.out.println("Please enter your full name:");
+
+        String passengerFullName = input.next();
+
+        System.out.println("Please enter your departure date: ");
+
+        String departureDate = input.next();
+
+        System.out.println("Please enter your return date:");
+
+        String returnDate = input.next();
+
+        System.out.println("Please enter number of children:");
+
+        int childPassengers = input.nextInt();
+
+        System.out.println("Please enter number of adults:");
+
+        int adultPassengers = input.nextInt();
+
+        System.out.println("1. First\n2. Bussiness\n3. Economy\nPlease choose your booking class(input the number):");
+
+        String a = input.next();
+
+        System.out.println("1. One way\n2. Return\nPlease choose your trip type(input the number):");
+
+        String b = input.next();
+
+        System.out.println("1. Nanjing\n2. Beijing\n3. Shanghai\n4. Oulu\n5. Helsinki\n6. Paris\nPlease choose your trip source(input the number):");
+
+        String c = input.next();
+
+        System.out.println("1. Nanjing\n2. Beijing\n3. Shanghai\n4. Oulu\n5. Helsinki\n6. Paris\nPlease choose your trip destination(input the number):");
+
+        String d = input.next();
+
+        LocalDate departureDate1 = LocalDate.parse(departureDate);
+
+        LocalDate returnDate1 = LocalDate.parse(returnDate);
+
+        FlightBooking flightBooking1 = new FlightBooking(passengerFullName,departureDate1,returnDate1,childPassengers,adultPassengers);
+
+        flightBooking1.setTotalTicketPrice();
+
+        flightBooking1.setTotalPassengers(childPassengers,adultPassengers);
+
+        flightBooking1.setBookingClass(a);
+
+        flightBooking1.setTripType(b);
+
+        flightBooking1.setTripSource(c);
+        flightBooking1.setSourceAirport(c);
+
+        flightBooking1.setTripDestination(c,d);
+
+        flightBooking1.setTicketNumber(i);
+
+        flightBooking1.setDepartureDate(departureDate1);
+
+        flightBooking1.setReturnDate(returnDate1);
+
+        flightBooking1.setDepartingTicketPrice(childPassengers, adultPassengers);
+
+        flightBooking1.setReturnTicketPrice();
+
+        flightBooking1.setTotalTicketPrice();
+
+        flightBooking1.setFlightID();
         }
+        System.out.println("You reserved a total of "+size+" tickets.");
 
-        fb.setTripSource("1");
-        fb.setSourceAirport("1");
 
-        fb.setTripDestination("1", "3");
-        fb.setDestinationAirport("1", "3");
 
-        fb.setTripType("2");
 
-        fb.setBookingClass("1");
-
-        String sdepart = "2023-04-12";
-        LocalDate departingOn = LocalDate.parse(sdepart);
-
-        String returnD = "2023-05-12";
-        LocalDate returningOn = LocalDate.parse(returnD);
-
-        fb.setDepartureDate(departingOn);
-        fb.setReturnDate(returningOn);
-
-        fb.setDepartingTicketPrice(0, 3);
-
-        fb.setReturnTicketPrice();
-
-        fb.setTotalTicketPrice();
-
-        fb.setAdultPassengers(5);
-
-        fb.setDestinationAirport("1", "3");
-        for(int j=0; j<size; ++j){
-            fb.setTicketNumber(j);
-        }
-        String [] fullName2 = {"Matt Jive", "Sally Fields", "Posh Quattro"};
-        String [] gender2 = {"Male", "Female", "Other"};
-        int [] age2 = {43, 32, 21};
-
-        for(int i=0; i<size; ++i){
-            fb.setPassengerFullName(i, fullName2[i]);
-            fb.setPassengerGender(i, gender2[i]);
-            fb.setPassengerAge(i, age2[i]);
-        }
     }
 }
