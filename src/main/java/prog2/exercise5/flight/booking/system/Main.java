@@ -54,7 +54,7 @@ public class Main
 
         LocalDate returnDate1 = LocalDate.parse(returnDate);
 
-        FlightBooking flightBooking1 = new FlightBooking(passengerFullName,departureDate1,returnDate1,childPassengers,adultPassengers);
+        FlightBooking flightBooking1 = new FlightBooking();
 
         flightBooking1.setTotalTicketPrice();
 

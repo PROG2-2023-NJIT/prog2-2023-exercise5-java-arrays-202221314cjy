@@ -59,15 +59,15 @@ public class FlightBooking {
         passengerAge=new int[size];
         ticketNumber=new String[size];
     }
-    public FlightBooking(String passengerFullName, LocalDate departureDate, LocalDate returnDate, int childPassengers, int adultPassengers) {
+    //public FlightBooking(String passengerFullName, LocalDate departureDate, LocalDate returnDate, int childPassengers, int adultPassengers) {
         //this.passengerFullName = passengerFullName;
-        this.departureDate = departureDate;
-        this.returnDate = returnDate;
-        this.childPassengers = childPassengers;
-        this.adultPassengers = adultPassengers;
-        this.totalPassengers = childPassengers + adultPassengers;
+        //this.departureDate = departureDate;
+        //this.returnDate = returnDate;
+       // this.childPassengers = childPassengers;
+        //this.adultPassengers = adultPassengers;
+        //this.totalPassengers = childPassengers + adultPassengers;
 
-    }
+    //}
 
 
     public String getFlightCompany() {
@@ -308,5 +308,25 @@ public class FlightBooking {
                         "Total ticket price in Euros: " + totalTicketPrice;
 
     }
+    public void displayTripDetails(int size)
+    {
+        System.out.println("Thank you for booking your flight with " + flightCompany +"\n"+
+                "You reserved a total of "+ size +" tickets.");
+        for(int i=0;i<size;i++)
+        {
+            System.out.println(
+                    "Here are the trip details for Passenger No." + i +"\n" +
+                            "Passenger's Ticket Number: " + ticketNumber[i] + "\n" +
+                            "Passenger Name:" + passengerFullName[i] + "\n" +
+                            "Passenger Age:" + passengerAge[i] + "\n" +
+                            "Passenger Gender:" + passengerGender[i] + "\n" +
+                            "From " + tripSource + "("+ sourceAirport +")"+"\n" +
+                            "To " + tripDestination + "("+ destinationAirport +")"+"\n" +
+                            "The flight departs on: " + departureDate + "\n" +
+                            "And the return flight is on: " + returnDate + "\n" );
 
+        }
+        System.out.println("The total ticket price is: "+totalTicketPrice);
+        System.out.println("IMPORTANT NOTICE: As per our policy, the return date was changed because it was less than two days apart from your departure date.");
+    }
 }
