@@ -8,7 +8,7 @@ public class FlightBooking {
     private String flightCompany = "Flights-of-Fancy";
     private String flightID;
     private String passengerFullName[];
-    private String passengerGender[];
+    private String passengerGender[]={"Male","Female","Other"};
     private int passengerAge[];
     private LocalDate departureDate;
     private LocalDate returnDate;
@@ -281,8 +281,8 @@ public class FlightBooking {
     }
     public void setDepartingTicketPrice(int childPassengers,int adultPassengers){
 
-            taxes = 0.15 * 300;
-            serviceFees = 0.1 * 300;
+            taxes = 0.1 * 300;
+            serviceFees = 0.05*300;
         departingTicketPrice = (basePrice + taxes + serviceFees)*(childPassengers + adultPassengers) + bookingClassCharge ;
     }
     public double  getReturnTicketPrice()
