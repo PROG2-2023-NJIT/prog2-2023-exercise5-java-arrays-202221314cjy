@@ -3,7 +3,7 @@ package prog2.exercise5.flight.booking.system;
 import java.time.LocalDate;
 
 public class FlightBooking {
-
+    int size = 3;
 
     private String flightCompany = "Flights-of-Fancy";
     private String flightID;
@@ -16,7 +16,7 @@ public class FlightBooking {
     private int adultPassengers;
     private int totalPassengers;
     private double totalTicketPrice ;
-    private String ticketNumber[];
+    private String ticketNumber[]=new String[size];
     private String c;
     private String d;
     private int date;
@@ -50,7 +50,6 @@ public class FlightBooking {
     private double serviceFees;
     private double departingTicketPrice;
     private double returnTicketPrice;
-    private int size;
     public FlightBooking(){}
     public FlightBooking(int size){
         this.size=size;
@@ -154,7 +153,14 @@ public class FlightBooking {
         this.totalPassengers = childPassengers + adultPassengers;
     }
 
-
+    public FlightBooking.TripType getTripType()
+    {
+        return tripType;
+    }
+    public FlightBooking.BookingClass getBookingClass()
+    {
+        return bookingClass;
+    }
     public void setFlightID(){
         this.flightID = "CJY541138" ;
     }
@@ -262,12 +268,12 @@ public class FlightBooking {
     }
 
     public void setTicketNumber(int i){
-        for(i=0;i<size;i++){
+
         this.ticketNumber[i]= "22ECJYSINT";
-        }
+
     }
     public String getTicketNumber(int i){
-        return this.ticketNumber[i];
+        return ticketNumber[i];
     }
     public double  getDepartingTicketPrice()
     {
@@ -284,7 +290,7 @@ public class FlightBooking {
         return returnTicketPrice;
     }
     public void setReturnTicketPrice(){
-        returnTicketPrice = departingTicketPrice;
+        this.returnTicketPrice = 0;
     }
 
     public void setTotalTicketPrice(){

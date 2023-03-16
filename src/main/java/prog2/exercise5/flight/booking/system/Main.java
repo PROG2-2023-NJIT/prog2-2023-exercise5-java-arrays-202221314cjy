@@ -54,34 +54,34 @@ public class Main
 
         LocalDate returnDate1 = LocalDate.parse(returnDate);
 
-        FlightBooking flightBooking1 = new FlightBooking();
+        FlightBooking fb = new FlightBooking();
 
-        flightBooking1.setTotalTicketPrice();
+        fb.setTotalTicketPrice();
 
-        flightBooking1.setTotalPassengers(childPassengers,adultPassengers);
+        fb.setTotalPassengers(childPassengers,adultPassengers);
 
-        flightBooking1.setBookingClass(a);
+        fb.setBookingClass(a);
 
-        flightBooking1.setTripType(b);
+        fb.setTripType(b);
 
-        flightBooking1.setTripSource(c);
-        flightBooking1.setSourceAirport(c);
+        fb.setTripSource(c);
+        fb.setSourceAirport(c);
 
-        flightBooking1.setTripDestination(c,d);
+        fb.setTripDestination(c,d);
 
-        flightBooking1.setTicketNumber(i);
+        fb.setTicketNumber(i);
 
-        flightBooking1.setDepartureDate(departureDate1);
+        fb.setDepartureDate(departureDate1);
 
-        flightBooking1.setReturnDate(returnDate1);
+        fb.setReturnDate(returnDate1);
 
-        flightBooking1.setDepartingTicketPrice(childPassengers, adultPassengers);
+        fb.setDepartingTicketPrice(childPassengers, adultPassengers);
 
-        flightBooking1.setReturnTicketPrice();
+        fb.setReturnTicketPrice();
 
-        flightBooking1.setTotalTicketPrice();
+        fb.setTotalTicketPrice();
 
-        flightBooking1.setFlightID();
+        fb.setFlightID();
         }
         System.out.println("You reserved a total of "+size+" tickets.");
 
