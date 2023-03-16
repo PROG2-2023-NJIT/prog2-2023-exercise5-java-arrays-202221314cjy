@@ -7,9 +7,9 @@ public class FlightBooking {
 
     private String flightCompany = "Flights-of-Fancy";
     private String flightID;
-    private String passengerFullName[];
+    private String passengerFullName[]={"Matt Jive", "Sally Fields", "Posh Quattro"};
     private String passengerGender[]={"Male","Female","Other"};
-    private int passengerAge[];
+    private int passengerAge[]={43, 32, 21};
     private LocalDate departureDate;
     private LocalDate returnDate;
     private int childPassengers;
@@ -80,24 +80,24 @@ public class FlightBooking {
         return flightID;
     }
 
-    public String getPassengerFullName(int i) {
-        return passengerFullName[i];
+    public String getPassengerFullName(int z) {
+        return passengerFullName[z];
     }
 
-    public void setPassengerFullName(int i,String passengerFullName) {
-        this.passengerFullName[i] = passengerFullName;
+    public void setPassengerFullName(int z,String passengerFullName) {
+        this.passengerFullName[z] = passengerFullName;
     }
-    public String getPassengerGender(int i){
-        return passengerGender[i];
+    public String getPassengerGender(int z){
+        return passengerGender[z];
     }
-    public void setPassengerGender(int i,String passengerGender){
-        this.passengerGender[i] = passengerGender;
+    public void setPassengerGender(int z,String passengerGender){
+        this.passengerGender[z] = passengerGender;
     }
-    public int getPassengerAge(int i){
-        return passengerAge[i];
+    public int getPassengerAge(int z){
+        return passengerAge[z];
     }
-    public void setPassengerAge(int i,int passengerAge){
-        this.passengerAge[i]=passengerAge;
+    public void setPassengerAge(int z,int passengerAge){
+        this.passengerAge[z]=passengerAge;
     }
     public TripSource getTripSource() {
         return tripSource;
@@ -267,34 +267,31 @@ public class FlightBooking {
         }
     }
 
-    public void setTicketNumber(int i){
+    public void setTicketNumber(int z){
 
-        this.ticketNumber[i]= "22ECJYSINT";
+        this.ticketNumber[z]= "22ECJYSINT";
 
     }
-    public String getTicketNumber(int i){
-        return ticketNumber[i];
+    public String getTicketNumber(int z){
+        return ticketNumber[z];
     }
     public double  getDepartingTicketPrice()
     {
         return departingTicketPrice;
     }
     public void setDepartingTicketPrice(int childPassengers,int adultPassengers){
-
-            taxes = 0.1 * 300;
-            serviceFees = 0.05*300;
-        departingTicketPrice = (basePrice + taxes + serviceFees)*(childPassengers + adultPassengers) + bookingClassCharge ;
+       this.departingTicketPrice=2* ((childPassengers*(300 + (0.15*300) + (0.1*300) + 250)) + (adultPassengers*(300 + (0.15*300) + (0.1*300) + 250)));
     }
     public double  getReturnTicketPrice()
     {
         return returnTicketPrice;
     }
     public void setReturnTicketPrice(){
-        this.returnTicketPrice = 0;
+        this.returnTicketPrice =0;
     }
 
     public void setTotalTicketPrice(){
-        totalTicketPrice = returnTicketPrice + departingTicketPrice;
+       this.totalTicketPrice =departingTicketPrice;
     }
     public double getTotalTicketPrice(){
 
